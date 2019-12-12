@@ -1,0 +1,19 @@
+# RPE configuration file sample
+[general]
+logfile = "/tmp/rpe.log"
+var_prefix = "$"
+
+# network specifics
+[network]
+address = "127.0.0.1"
+port = 8080
+
+[[command]]
+name = "list_files"
+path = "/bin/ls"
+args = ["-l", "$DIR"]
+
+[[command]]
+name = "find_files"
+path = "/usr/bin/find"
+args = ["$ROOT", "-name", "$PATTERN"]
